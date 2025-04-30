@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Project 2 Report</title>
+    <style>
+      :root {
+        --color-neutral-95: hsl(220 10% 95%);
+        --color-neutral-90: hsl(220 10% 90%);
+        --color-neutral-80: hsl(220 10% 80%);
+        --color-neutral-70: hsl(220 10% 70%);
+        --color-neutral-60: hsl(220 10% 60%);
+        --color-neutral-50: hsl(220 10% 50%);
+        --color-neutral-40: hsl(220 10% 40%);
+        --color-neutral-30: hsl(220 10% 30%);
+        --color-neutral-20: hsl(220 10% 20%);
+        --color-neutral-10: hsl(220 10% 10%);
+      }
+
+      html {
+        font: 100%/1.5 system-ui;
+        counter-reset: figure;
+        background: var(--color-neutral-95);
+        max-width: min(75vw, 80em);
+        margin: 0 auto;
+      }
+
+      /* Headings */
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        line-height: 1.1;
+        font-weight: 600;
+        text-wrap: balance;
+      }
+
+      h1,
+      h2 {
+        border-bottom: 1px solid var(--color-neutral-80);
+        padding-bottom: 0.2em;
+      }
+
+      h1 {
+        margin-block: 1em 0.5rem;
+        font-size: clamp(2.5em, 150% + 2vh + 2vw, 10vmin);
+        font-weight: 800;
+
+        small {
+          display: block;
+          width: fit-content;
+          padding: 0.2em 0.5em;
+          margin-inline: auto;
+          color: white;
+          background: var(--color-neutral-40);
+          font-size: 40%;
+          text-transform: uppercase;
+          white-space: nowrap;
+        }
+      }
+
+      h2 {
+        font-size: 180%;
+        color: var(--color-neutral-30);
+      }
+
+      h3 {
+        font-size: 130%;
+      }
+
+      /* Lists */
+
+      ul,
+      ol {
+        padding-inline-start: 2em;
+      }
+
+      li {
+        &::marker {
+          color: var(--color-neutral-40);
+        }
+
+        + li {
+          margin-top: 0.2em;
+        }
+      }
+
+      /* Sectioning elements */
+
+      header {
+        padding-block: 1em;
+        text-align: center;
+      }
+
+      main {
+        background: white;
+        color: var(--color-neutral-20);
+        border-radius: 1rem;
+        padding: 0.1rem 2rem;
+      }
+
+      /* Figures */
+
+      figure {
+        margin: 1em 0;
+        padding: 0.5rem;
+        margin-inline: -0.5em;
+        border: 1px solid var(--color-neutral-80);
+        box-shadow: 0 0.1em 0.2em var(--color-neutral-95);
+        text-align: center;
+        background: white;
+
+        > figcaption {
+          font: 500 75% var(--font-sans);
+          background: var(--color-neutral-95);
+          padding: 0.5rem;
+          margin: -0.5rem;
+          margin-top: 0.5rem;
+          counter-increment: figure;
+          text-align: left;
+
+          &::before {
+            content: 'Figure ' counter(figure) ': ';
+            font-weight: bold;
+            color: var(--color-neutral-40);
+          }
+
+          a:not(:hover, :focus, :active) {
+            color: inherit;
+            text-decoration: underline;
+            text-decoration-color: color-mix(
+              in lab,
+              currentColor,
+              transparent 70%
+            );
+          }
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>
+        <small>Assignment 4</small>
+        Persuasive or Deceptive Visualization?
+      </h1>
+
+      <p><strong>Tristan Leo</strong> — <em>tleo@ucsd.edu</em></p>
+    </header>
+
+    <main>
+      <h2>Proposition: Global greenhouse gas (GHG) emissions have been rising rapidly in recent decades.</h2>
+
+      <section>
+        <h3>FOR the Proposition</h3>
+
+        <figure>
+          <img src="support_emissions.png" alt="" style="width: 100%;height: auto;"/>
+          <figcaption>The line plot above shows the trend of Total GHG Emissions</figcaption>
+        </figure>
+
+        <p>Design Decisions and Rationale:</p>
+
+        <ul>
+          <li><b>Metric used: Total GHG Emissions</b> (-1.5)<br>
+            To show a relationship between population and emissions, I plotted Year on the x-axis because we know that the global population grows as time passes. As for the y-axis, since total emissions are heavily influenced by population growth, choosing this instead of GHG emissions per capita inflates the perceived severity.</li><br>
+          <li><b>Y-axis truncation (-2)</b><br>
+            The y-axis starts at around 25M instead of 0, which makes the upward slope steeper, hence making the growth seem sharper. In the dataset I used, there was information about different types of gas emissions, which could have also been used to support the proposition, but I found that the one I used for my plot gave the best shape to support my proposition and make it more persuasive.
+            </li><br>
+          <li><b>Text Box Annotation (-1)</b><br>
+            The text box was placed in the center of the plot to make it more visible and eye-catching to the reader. I decided to put a short phrase instead of a longer one to keep my visualization neat, while still being able to convey the general message of the plot. Moreover, the text is meant to reinforce the visual exaggerations by using emotional phrasing and an arrow pointing up.
+            </li><br>
+          <li><b>Color Choice: Red (-0.5)</b><br>
+              I chose a bold red color for the line plot to imply urgency or “danger.” </li><br>
+          <li><b>Title (-0.5)</b><br>
+            The title has a bolded font, making it more eye-catching, the word “red” is fully capitalized, colored in red, and it has an exclamation mark. These elements work together to help signal urgency.</li><br>
+
+        </ul>
+      </section>
+
+      <section>
+        <h3>AGAINST the Proposition</h3>
+
+        <figure>
+          <img src="oppose_percapita.png" alt="" style="width: 100%;height: auto;" />
+          <figcaption>The line plot above shows the trend of GHG Emissions per Capita</figcaption>
+        </figure>
+
+        <p>Design Decisions and Rationale:</p>
+
+        <ul>
+          <li><b>Metric Used: GHG per Capita (-1.5)</b><br>
+            By dividing total GHG emissions by population, the plot shifts focus away from the absolute scale of climate impact and instead centers on individual contribution. This visually flattens what might otherwise be a steep rise in emissions due to global population growth. Using it here minimizes the perception of urgency, implying that on an individual basis, emissions haven’t drastically changed, even though overall emissions have increased significantly.
+            </li><br>
+          <li><b>Scaling of Y-Axis (-2)</b><br>
+            The y-axis range is narrow, spanning only a 2.3-ton window, which compresses visual changes, making fluctuations seem minimal. As a result, the viewer perceives a stable trend line with relatively minor dips or rises, reinforcing the idea that not much has changed, which is meant to be deceiving, as viewers tend to infer significance from slope steepness and visual movement.
+            </li><br>
+          <li><b>Text Box Annotation (-1)</b><br>
+            The text box was placed in the center of the plot to make it more visible and eye-catching to the reader. I decided to put a short phrase instead of a longer one to keep my visualization neat, while still being able to convey the general message of the plot. Moreover, the text is meant to reinforce the visual exaggerations by using emotional phrasing and an arrow pointing down.
+            </li><br>
+          <li><b>Color Choice: Teal (-0.5)</b><br>
+            I chose a cool teal tone for the line plot to subtly communicate a sense of “calmness.”
+            </li><br>
+          <li><b>Title (-0.5)</b><br>
+            I phrased the title as a question to add ambiguity and drama.</li><br>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Final Reflection</h2>
+
+        <p>Starting out, I was overwhelmed by the number of datasets available on the course website. I wanted to find one with interesting information while also thinking of ways to visualize it, but it didn’t take long to realize that reviewing the datasets one by one would be very time-consuming and tedious. I decided to narrow my search to environmental-themed datasets. Fortunately, I came across a dataset from the World Bank focused on climate change. At first glance, I noticed that many columns had numerous missing (NaN) values. I thought to myself: if a large portion of a column is missing, and I try to plot it against another variable to examine their relationship, the resulting plots would be biased and unreliable. So, before familiarizing myself with the data, I filtered out columns where more than 40% of the values were missing. Then, with the remaining columns, I slowly began formulating my proposition.<br><br>
+
+          After spending some time understanding the structure of the dataset, I decided to examine the trend in greenhouse gas (GHG) emissions, as it felt highly relevant today. I chose a line plot because it’s simple, intuitive, and easier to manipulate in a persuasive way—allowing one version of the plot to trend upward and another to trend downward. One challenge was selecting the right variables to best support each side of my proposition. I had to play around with the available data to test which combinations produced the most persuasive visual effects. Once I found the best match, I implemented subtle deceptive techniques introduced in lectures—like adjusting the y-axis scale or choosing different metrics—to highlight or downplay emission trends.<br><br>
+          
+          After completing this project, I was surprised by how easily viewer perception could be influenced by simple tweaks in axes, color, or phrasing. It made me realize how vigilant I need to be when evaluating data visualizations to avoid falling into visual “traps.” This project taught me that ethical visualization is about balancing clarity, truthfulness, and emotional influence. Persuasive visualizations become misleading when they selectively emphasize certain aspects while obscuring others—especially without proper context. I consider “acceptable” persuasive choices to be those that clarify and focus interpretation without hiding key facts, while “misleading” ones exploit ambiguity or exaggerate/understate a message. In conclusion, just because a visualization is based on real data doesn’t mean it’s always conveying the whole truth.</p>
+      </section>
+    </main>
+  </body>
+</html>
